@@ -6,7 +6,8 @@ public class CdkApp {
 
     public static void main(final String[] args) {
         App app = new App();
-        VpcStack.createUsing(app);
+        VpcStack vpcStack = VpcStack.createUsing(app);
+        EcsStack.createUsing(app, vpcStack);
         app.synth();
     }
 
