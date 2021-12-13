@@ -27,4 +27,5 @@ public class ApplicationLoadBalancedFargateServiceResource {
                 .publicLoadBalancer(true)
                 .build();
     }
+
 }

@@ -18,10 +18,11 @@ import static com.myorg.constants.AppConstants.ResourceNames.DEMO_AWS_CLOUD_FORM
 public class DemoAwsCloudFormationServiceStack extends Stack {
 
 
-    public static void createUsing(Construct scope, EcsStack ecsStack) {
+    public static void createUsing(Construct scope, EcsStack ecsStack, RdsStack rdsStack) {
         String thisStackId = DEMO_AWS_CLOUD_FORMATION_SERVICE_NAME.concat("-STACK");
-        DemoAwsCloudFormationServiceStack stack = new DemoAwsCloudFormationServiceStack(scope, thisStackId, ecsStack);
-        stack.addDependency(ecsStack);
+        DemoAwsCloudFormationServiceStack thisStack = new DemoAwsCloudFormationServiceStack(scope, thisStackId, ecsStack);
+        thisStack.addDependency(ecsStack);
+        thisStack.addDependency(rdsStack);
     }
 
     public DemoAwsCloudFormationServiceStack(Construct scope, String thisStackId, EcsStack ecsStack) {

@@ -2,6 +2,7 @@ package com.myorg;
 
 import com.myorg.stacks.DemoAwsCloudFormationServiceStack;
 import com.myorg.stacks.EcsStack;
+import com.myorg.stacks.RdsStack;
 import com.myorg.stacks.VpcStack;
 import software.amazon.awscdk.App;
 
@@ -11,7 +12,8 @@ public class CdkApp {
         App app = new App();
         VpcStack vpcStack = VpcStack.createUsing(app);
         EcsStack ecsStack = EcsStack.createUsing(app, vpcStack);
-        DemoAwsCloudFormationServiceStack.createUsing(app, ecsStack);
+        RdsStack rdsStack = RdsStack.createUsing(app, vpcStack);
+        DemoAwsCloudFormationServiceStack.createUsing(app, ecsStack, rdsStack);
         app.synth();
     }
 
