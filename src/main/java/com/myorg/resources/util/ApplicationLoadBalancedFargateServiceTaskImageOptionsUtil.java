@@ -12,7 +12,7 @@ import static com.myorg.constants.AppConstants.ResourceNames.DEMO_AWS_CLOUD_FORM
 @UtilityClass
 public class ApplicationLoadBalancedFargateServiceTaskImageOptionsUtil {
 
-    private static final String DEMO_AWS_CLOUD_FORMATION_CONTAINER_IMAGE_URL = "julucin/demo-aws-cloud-formation:latest";
+    private static final String DEMO_AWS_CLOUD_FORMATION_CONTAINER_IMAGE_URL = "julucin/demo-aws-cloud-formation:0.0.2";
 
     public static ApplicationLoadBalancedTaskImageOptions createFor(DemoAwsCloudFormationServiceStack demoAwsCloudFormationServiceStack) {
         return ApplicationLoadBalancedTaskImageOptions.builder()
